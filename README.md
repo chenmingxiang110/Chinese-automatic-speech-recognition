@@ -105,6 +105,6 @@ result = (html.decode('utf8')).split(",")[2][2:-1]
 print(result)
 ```
 
-这里转化成汉字这一步使用了谷歌拼音输入法。如果有需要也可以使用自定义的词表/Markov Chain/seq2seq模型。如果使用词表来定制输入法，可以参考我的另外一个project：
+这里转化成汉字这一步使用了谷歌拼音输入法。如果有需要也可以使用自定义的词表/Markov Chain/seq2seq模型。如果使用词表来定制输入法，可以参考我的另外一个project：https://github.com/chenmingxiang110/Android-pinyin-converter
 
 ## 效果和demo
