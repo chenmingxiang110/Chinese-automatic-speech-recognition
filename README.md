@@ -2,7 +2,7 @@
 
 ## 模型简介
 
-模型输入是一段不长于10秒钟的语音，模型的输出是该语音所对应的拼音标签。
+模型输入是一段不长于10秒钟的语音，模型的输出是该语音所对应的拼音标签。本项目使用python 3.6为主要编程语言。
 
 模型参考了Baidu Deep Speech 2：http://proceedings.mlr.press/v48/amodei16.pdf
 
@@ -35,5 +35,76 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 这里的训练时间仅仅是一个大概的统计，训练使用一块Tesla V100完成。
 
 ### 2. 识别音频
+
+1. 初始化模型并加载必要的工具
+
+```
+import os
+import time
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import tensorflow as tf
+import numpy as np
+from urllib.request import urlopen
+
+from lib.tools_batch import *
+from lib.tools_math import *
+from lib.tools_sparse import *
+from lib.tools_audio import *
+from lib.contrib.audio_featurizer import AudioFeaturizer
+from lib.contrib.audio import AudioSegment
+
+# 根据你所使用的模型修改这两行
+from model903 import *
+model_name = "v903"
+
+pyParser = pinyinParser("lib/pinyinDictNoTone.pickle")
+af = AudioFeaturizer()
+model = model(409)
+```
+
+2. 初始化session并reload已经训练好的模型
+
+```
+sess = tf.Session()
+saver = tf.train.Saver()
+saver.restore(sess, "models/"+model_name+"/"+model_name+"_0.ckpt")
+```
+
+3. 读取音频并转化格式
+
+```
+rate, data = read_wav("data/test.wav")
+data = mergeChannels(data)
+data = zero_padding_1d(data, 160240)
+a_seg = AudioSegment(data, rate)
+xs = np.transpose(np.array([af.featurize(a_seg)]), [0,2,1])
+```
+
+4. 预测并转化成拼音
+
+```
+pred = model.predict(sess, xs)[0]
+pred_dense = sparseTuples2dense(pred)
+detected_line = []
+for stuff in pred_dense[0]:
+    if stuff!=-1:
+        detected_line.append(stuff)
+pinyin = pyParser.decodeIndices(detected_line, useUnderline = False)
+```
+
+5. 转化成汉字
+
+```
+response = urlopen("https://www.google.com/inputtools/request?ime=pinyin&ie=utf-8&oe=utf-8&app=translate&num=10&text="+pinyin)
+html = response.read()
+result = (html.decode('utf8')).split(",")[2][2:-1]
+print(result)
+```
+
+这里转化成汉字这一步使用了谷歌拼音输入法。如果有需要也可以使用自定义的词表/Markov Chain/seq2seq模型。如果使用词表来定制输入法，可以参考我的另外一个project：
 
 ## 效果和demo
