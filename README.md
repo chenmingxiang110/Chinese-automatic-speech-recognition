@@ -111,8 +111,14 @@ print(result)
 
 ASR 应用场景十分多样。这里我做了一个自动添加字幕的demo，代码详见subtitle_demo.ipynb。一下为字幕添加效果。
 
-1. 视频一，视频地址：https://www.youtube.com/watch?v=t5cPgIGNosc&t=288s
+1. 视频一，视频地址：https://www.youtube.com/watch?v=t5cPgIGNosc
 
 左侧为自动添加的字幕，右侧为YouTuber人工手动添加的字幕
 
 ![Alt text](data/result_comparison_yixi.jpg)
+
+2. 视频二，视频地址：https://www.youtube.com/watch?v=HLJJlQkY6ro
+
+左侧为自动添加的字幕，右侧为YouTuber人工手动添加的字幕
+
+![Alt text](data/result_comparison_zongli.jpg)
