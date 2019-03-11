@@ -122,3 +122,5 @@ ASR 应用场景十分多样。这里我做了一个自动添加字幕的demo，
 左侧为自动添加的字幕，右侧为YouTuber人工手动添加的字幕
 
 ![Alt text](data/result_comparison_zongli.jpg)
+
+完整的字幕原文件和预测结果可以再data文件夹中找到。
