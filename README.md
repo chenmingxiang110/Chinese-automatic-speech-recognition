@@ -31,7 +31,7 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 
 2. YouTube视频及对应字幕文件
 
-从YouTube上获取MP4视频文件后转化成wav音频，同时使用对应的srt字幕文件作为target。总计时长大约120小时，有约20万条语音数据。如果有需要，请联系我的邮箱获取下载链接：chenmingxiang110@gmail.com
+从YouTube上获取MP4视频文件后转化成wav音频，同时使用对应的srt字幕文件作为target。总计时长大约120小时，有约20万条语音数据。数据量过大，所以暂时不提供公开下载渠道。如果有需要，请联系我获取：chenmingxiang110@gmail.com
 
 ## 使用方法
 
@@ -50,6 +50,8 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 model 903 下载地址:
 https://pan.baidu.com/s/1XB030KsXKv1tbVKMQ5s5BA 
 密码:vlgr
+
+下载后放在model文件夹下。
 
 ### 2. 识别音频
 
