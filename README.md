@@ -47,6 +47,10 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 
 这里的训练时间仅仅是一个大概的统计，训练使用一块Tesla V100完成。
 
+model 903 下载地址:
+https://pan.baidu.com/s/1XB030KsXKv1tbVKMQ5s5BA 
+密码:vlgr
+
 ### 2. 识别音频
 
 1. 初始化模型并加载必要的工具
