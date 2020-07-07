@@ -60,11 +60,11 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 
 这里的训练时间仅仅是一个大概的统计，训练使用一块Tesla V100完成。
 
-model 903 下载地址: https://pan.baidu.com/s/1XB030KsXKv1tbVKMQ5s5BA  密码: vlgr
+model 903 链接: https://pan.baidu.com/s/1NcTN8gojuIBaIFT9FB3EJw  密码: 261u
 
-model 902 下载地址: https://pan.baidu.com/s/1nZ-19xRfjHlIm3KE8jhTMg  密码: r976
+model 902 链接: https://pan.baidu.com/s/1do7C6Egj6sJO7kn1yHPzBg  密码: 9o87
 
-model 901 下载地址: https://pan.baidu.com/s/1KqDLQ2sWzt-n-PEpChKXjA  密码: bqfk
+model 901 链接: https://pan.baidu.com/s/1utz-1Vv4IO9D-3awj3x1QQ  密码: pv08
 
 下载后放在model文件夹下。
 
