@@ -50,7 +50,7 @@ AISHELL-ASR0009-OS1录音时长178小时，约14万条语音数据，下载地�
 
 ### 1. 训练模型
 
-根据实际需求和硬件情况，可以选择需要的模型进行训练和调试。各个模型区别如下。如果实在含GPU的机器上训练模型，直接运行 train901.py，train902.py，或者train903.py 即可。如果是在CPU上训练，则运行 train901_cpu.py，train902_cpu.py，或者train903_cpu.py。
+根据实际需求和硬件情况，可以选择需要的模型进行训练和调试。各个模型区别如下。如果在含GPU的机器上进行模型训练，直接运行 train901.py，train902.py，或者train903.py 即可。如果是在CPU上训练，则运行 train901_cpu.py，train902_cpu.py，或者train903_cpu.py。
 
 |模型名称 |CNN层数 |GRU层数 |GRU维度 |训练时间 |
 |--- |--- |--- |--- |--- |
